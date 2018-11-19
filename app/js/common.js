@@ -1,5 +1,28 @@
 $(function() {
 
+//------------------------------slider-----------------------------
+  var swiper = new Swiper('.swiper-container', {
+    slidesPerView: 4,
+    spaceBetween: 50,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      1200: {
+        slidesPerView: 3,
+        spaceBetween: 30
+      },
+      767: {
+        slidesPerView: 2,
+        spaceBetween: 30
+      },
+      576: {
+        slidesPerView: 1,
+        spaceBetween: 30
+      }
+    }
+  });
 
 //------------------------------гамбургер-----------------------------
   $('.hamburger').click(function() {
@@ -32,11 +55,26 @@ $(function() {
       messages: {
         name: "Введите Ваше имя",
         phone: "Введите Ваш телефон",
+        email: "Введите Email",
       },
       submitHandler: function(form) {
         var t = {
           name: jQuery('.form-' + index).find("input[name=name]").val(),
           phone: jQuery('.form-' + index).find("input[name=phone]").val(),
+          email: jQuery('.form-' + index).find("input[name=email]").val(),
+          date: jQuery('.form-' + index).find("input[name=date]").val(),
+          inn: jQuery('.form-' + index).find("input[name=inn]").val(),
+          citizenship: jQuery('.form-' + index).find("input[name=citizenship]").val(),
+          addres: jQuery('.form-' + index).find("input[name=addres]").val(),
+          addresfact: jQuery('.form-' + index).find("input[name=addresfact]").val(),
+          passport: jQuery('.form-' + index).find("input[name=passport]").val(),
+          education: jQuery('.form-' + index).find("input[name=education]").val(),
+          specialty: jQuery('.form-' + index).find("input[name=specialty]").val(),
+          desired: jQuery('.form-' + index).find("input[name=desired]").val(),
+          salary: jQuery('.form-' + index).find("input[name=salary]").val(),
+          employment: jQuery('.form-' + index).find("input[name=employment]").val(),
+          children: jQuery('.form-' + index).find("input[name=children]").val(),
+          changedthename: jQuery('.form-' + index).find("input[name=changedthename]").val(),
           subject: jQuery('.form-' + index).find("input[name=subject]").val()
         };
         ajaxSend('.form-' + index, t);
@@ -71,43 +109,21 @@ $(function() {
   });
 
 //-------------------------скорость якоря---------------------------------------
-  $(".header__list").on("click","a", function (event) {
+  $(".nav").on("click","a", function (event) {
       event.preventDefault();
       var id  = $(this).attr('href'),
           top = $(id).offset().top;
-      $('body,html').animate({scrollTop: top - 60}, 'slow', 'swing');
-  //--------------------закриття меню при кліку на ссилку якоря--------------------
-     // $('.hamburger').removeClass('hamburger--active');
-     // $('.header-menu').removeClass('header-menu');
-     // $('.header--active').removeClass('header--active');
-     // $('.nav--active').removeClass('nav--active');
-
+      $('body,html').animate({scrollTop: top - 5}, 'slow', 'swing');
+    //--------------------закриття меню при кліку на ссилку якоря--------------------
+     $('.hamburger').removeClass('hamburger--active');
+     $('.nav').removeClass('nav--active');
   });
 
-  //-------------------------------анімація цифр---------------------------------------
-    var show = true;
-    var countbox = ".about-statistics__container";
-    $(window).on("scroll load resize", function () {
-        if (!show) return false; // Отменяем показ анимации, если она уже была выполнена
-        var w_top = $(window).scrollTop(); // Количество пикселей на которое была прокручена страница
-        var e_top = $(countbox).offset().top; // Расстояние от блока со счетчиками до верха всего документа
-        var w_height = $(window).height(); // Высота окна браузера
-        var d_height = $(document).height(); // Высота всего документа
-        var e_height = $(countbox).outerHeight(); // Полная высота блока со счетчиками
-        if (w_top + 500 >= e_top || w_height + w_top == d_height || e_height + e_top < w_height) {
-            $('.about-statistics__item h3').spincrement({
-                thousandSeparator: "",
-                duration: 2000
-            });
-            show = false;
-        }
-    });
-  
 });
 
 //----------------------------------------preloader----------------------------------
 
-  $(window).on('load', function(){
-    $('.preloader').delay(1000).fadeOut('slow');
-  });
+  // $(window).on('load', function(){
+  //   $('.preloader').delay(1000).fadeOut('slow');
+  // });
 

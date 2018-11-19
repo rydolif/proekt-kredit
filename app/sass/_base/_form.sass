@@ -1,7 +1,15 @@
 .form
+	width: 670px
+	margin: 0 auto
+	color: #fff
+	background: #4A4A62
+	border-radius: 4px
+	box-shadow: 0 0 0 rbga(#4A4A62, .3)
+	padding: 35px
+
 	label.error
 		position: absolute
-		bottom: -25px
+		bottom: -15px
 		right: 25px
 		left: 25px
 		transition: all .3s
@@ -25,5 +33,26 @@
 	div
 		position: relative
 		margin-bottom: 20px
+		width: 100%
 		&:last-child
 			margin-bottom: 0
+
+	input
+		width: 100%
+		border-radius: 4px
+		height: 30px
+		line-height: 30px
+		padding: 0 5px
+
+	label
+		margin-bottom: 0
+		font-weight: 500
+
+	h3
+		margin-bottom: 30px
+		text-align: center
+		font-size: 22px
+
+	&__btn
+		display: block
+		width: 100%
