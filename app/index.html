@@ -30,31 +30,35 @@
 					Кредит
 				</a>
 				<p class="header__text">Работаем по всей России</p>
-				<a href="tel:+74952053167" class="header__tel"><img src="img/phoneico.png" alt=""> +7 (495) 205-31-67</a>
-				<a href="tel:+79258153478" class="header__tel header__tel-2"><img src="img/phoneicom.png" alt=""> +7 (925) 815-34-78</a>
+				<div>
+					<a href="tel:+74952053167" class="header__tel"><img src="img/phoneico.png" alt=""> +7 (495) 205-31-67</a>
+					<a href="tel:+79258153478" class="header__tel"><img src="img/phoneicom.png" alt=""> +7 (925) 815-34-78</a>
+				</div>
 			</div>
 
 			<div class="header__nav" >
-				<nav class="nav">
-					<ul>
-						<li><a href="#document">Помощь с документами</a></li>
-						<li><a href="#help">Чем мы можем помочь?</a><li>
-						<li><a href="#advantages">Наши преимущества</a><li>
-						<li><a href="#price">Цены</a><li>
-						<li><a href="#partner">Банки партнеры</a><li>
-						<li><a href="#contacts">Контакты</a><li>
-					</ul>
-				</nav>
-				<button class="hamburger" type="button">
-					<span class="hamburger__box">
-						<span class="hamburger__item"></span>
-					</span>
-				</button>
+				<div class="container">
+					<nav class="nav">
+						<ul>
+							<li><a href="#document">Помощь с документами</a></li>
+							<li><a href="#help">Чем мы можем помочь?</a></li>
+							<li><a href="#advantages">Наши преимущества</a></li>
+							<li><a href="#price">Цены</a></li>
+							<li><a href="#partner">Банки партнеры</a></li>
+							<li><a href="#contacts">Контакты</a></li>
+						</ul>
+					</nav>
+					<button class="hamburger" type="button">
+						<span class="hamburger__box">
+							<span class="hamburger__item"></span>
+						</span>
+					</button>
+				</div>
 			</div>
 
 			<h1>Помощь в сборе и оформлении документов для <br> потребительского кредита, автокредита, ипотеки, <br> визы и гражданства</h1>
 
-			<div class="header--section section" id="document">
+			<div class="header--section section sticky" id="document">
 
 				<div class="header--section__content">
 					<ul class="header--section__list">
@@ -86,14 +90,12 @@
 				</div>
 
 			</div>
-
-
 		</div>
 	</header>
 
 	<main class="main">
 
-		<section class="help section" id="help">
+		<section class="help section sticky" id="help">
 			<div class="container">
 				<h2>Чем мы <span>можем помочь</span>?</h2>
 				<div class="help__list">
@@ -113,13 +115,13 @@
 						<br>в банк. Также наши эксперты знают о всех нюансах
 						<br>работы кредитных организаций и ответят на все Ваши вопросы.
 					</p>
-					<a href="onlinezakaz.html" class="help__btn btn">Оформить заказ</a>
+					<a href="#" class="help__btn btn order_open">Оформить заказ</a>
 				</div>
 				<img src="img/2ndfl.jpg" alt="">
 			</div>
 		</section>
 
-		<section class="advantages section" id="advantages">
+		<section class="advantages section sticky" id="advantages">
 			<div class="container">
 
 				<h2>Обратившись в нашу организацию <br>вы получаете <span>следующие преимущества:</span></h2>
@@ -174,13 +176,13 @@
 					</div>
 					<div class="time__block">
 						<h2>Экономьте своё время, <br>подайте заявку в режиме онлайн</h2>
-						<a href="onlinezakaz.html" class="btn">Подать заявку онлайн</a>
+						<a href="#" class="btn order_open">Подать заявку онлайн</a>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<section class="services section" id="price">
+		<section class="services section sticky" id="price">
 			<div class="container">
 				
 				<h2><span>Наши услуги</span></h2>
@@ -302,7 +304,7 @@
 			</div>
 		</section>
 
-		<section class="partner section" id="partner">
+		<section class="partner section sticky" id="partner">
 			<div class="container">
 				
 				<h2><span>Наши Банки партнеры</span></h2>
@@ -362,8 +364,6 @@
 		</section>
 
 		<section class="map" id="map">
-			<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A963e56ee0dd6b00a3bbc290db3a7d8de4d5d39c4fc6cfc07a87b8504b06bb198&amp;source=constructor"></iframe>
-
 			<div class="container">
 				<div class="map__block">
 					<h2>Контакты</h2>
@@ -373,7 +373,7 @@
 			</div>
 		</section>
 
-		<section class="contacts section" id="contacts">
+		<section class="contacts section sticky" id="contacts">
 			<div class="container">
 
 				<div class="contacts__block">
@@ -414,7 +414,43 @@
 			</div>
 		</div>
 	</footer>
+	
+
+	<!-- 	modal -->
+	<div class="modal" id="order">
+		<div class="wrapper">
+			<form action="sendmail.php" class="form" method="post">
+
+				<button class="close order_close" type="button"></button>
+
+				<h3>Предоставим бесплатную консультацию  <br>и поможем оформить заказ!</h3>
+				<input type="hidden" name="subject" value="Узнать подробнее!">
+
+				<div class="">
+					<input type="text" name="name" placeholder="Ваше имя" required>
+				</div>
+
+				<div class="">
+					<input type="tel" name="phone" required placeholder="Ведите номер телефона">
+				</div>
+
+				<div>
+					<button type="submit" class="btn footer__form_btn" name="submit" value="отправить">Отправить</button>
+				</div>
+
+			</form>
+		</div>
+	</div>
+
+	<div class="modal" id="thanks">
+		<button class="close thanks_close" type="button"></button>
+
+		<h3>Спасибо <br>за доверие!</h3>
+		<p>Мы обязательно с вами свяжемся!</p>
+	</div>
+	<!-- 	modal end-->
 
 	<script src="js/scripts.min.js"></script>
+
 </body>
 </html>

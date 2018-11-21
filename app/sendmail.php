@@ -20,8 +20,8 @@
 		$children = htmlspecialchars(trim($_POST['children']));
 		$changedthename = htmlspecialchars(trim($_POST['changedthename']));
 
-		$question = isset($_POST['question']) ? htmlspecialchars(trim($_POST['question'])) : '';
-		$to = 'rudolifrudolif@gmail.com';
+		$comment = isset($_POST['comment']) ? htmlspecialchars(trim($_POST['comment'])) : '';
+		$to = 'realgelik@gmail.com';
 
 		$headers = "From: $SITE_TITLE \r\n";
 		$headers .= "Reply-To: ". $email . "\r\n";

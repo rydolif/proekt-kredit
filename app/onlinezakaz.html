@@ -30,8 +30,10 @@
 					Кредит
 				</a>
 				<p class="header__text">Работаем по всей России</p>
-				<a href="tel:+74952053167" class="header__tel"><img src="img/phoneico.png" alt=""> +7 (495) 205-31-67</a>
-				<a href="tel:+79258153478" class="header__tel header__tel-2"><img src="img/phoneicom.png" alt=""> +7 (925) 815-34-78</a>
+				<div>
+					<a href="tel:+74952053167" class="header__tel"><img src="img/phoneico.png" alt=""> +7 (495) 205-31-67</a>
+					<a href="tel:+79258153478" class="header__tel"><img src="img/phoneicom.png" alt=""> +7 (925) 815-34-78</a>
+				</div>
 			</div>
 
 		</div>
@@ -40,7 +42,7 @@
 	<main class="main section-form">
 		
 		<div class="container">
-			<form action="sendmail.php" class="form" method="post">
+			<form action="sendmail.php" class="form form--page" method="post">
 
 				<h3>Форма заказа</h3>
 
@@ -110,15 +112,30 @@
 					<label for="email">Ваш E-mail</label>
 					<input type="mail" name="email" required placeholder="Пример: petrov@yandex.ru" id="email">
 				</div>
+				<div class="">
+					<label for="comment">Комментарий</label>
+					<textarea name="comment" required placeholder="Ваше сообщение:" id="comment" rows="4"></textarea>
+				</div>
 
 				<div><button type="submit" class="btn form__btn" name="submit" value="отправить">Отправить</button></div>
 
 			</form>
 		</div>
 
-	</main>
+	</main>	
+
+	<!-- 	modal -->
+		<div class="modal" id="thanks">
+			<button class="close thanks_close" type="button"></button>
+
+			<h3>Спасибо <br>за доверие!</h3>
+			<p>Мы обязательно с вами свяжемся!</p>
+		</div>
+	<!-- 	modal end-->
+
 
 	
 	<script src="js/scripts.min.js"></script>
+
 </body>
 </html>

@@ -27,12 +27,34 @@
 		display: flex
 		justify-content: space-between
 		align-items: center
-		margin-bottom: 50px
+		margin-bottom: 100px
 
+		div
+			display: flex
+			justify-content: space-between
+
+			a:first-child
+				margin-right: 60px
 
 	&__nav
-		position: relative
-		margin-bottom: 50px
+		position: fixed
+		top: 80px
+		right: 0
+		left: 0
+		padding: 20px 0
+		background: #fff
+		z-index: 100
+		transition: all .3s
+
+		a
+			color: #000
+			&:hover, &:focus
+				color: #000
+
+		&--active
+			top: -1px
+			box-shadow: 0 0 4px 0 rgba(0, 0, 0, .2)
+
 
 	&__logo
 		text-transform: uppercase
@@ -154,6 +176,7 @@
 			&_bd-right,
 			&_bd-bottom
 				position: absolute
+				z-index: -1
 
 
 			&_bd-left
@@ -241,17 +264,15 @@ h1
 			z-index: -1
 
 		&:hover
-			color: #fff
+			color: #000
 			text-decoration: none
 			&::before
 				transform: scale(1)
-
-		&:focus
-			color: #fff
-			text-decoration: none
-			&::before
-				transform: scale(1)
-
+	.active-item
+		color: #000
+		text-decoration: none
+		&::before
+			transform: scale(1)
 
 h2
 	text-align: center
@@ -480,6 +501,14 @@ h2
 	height: 420px
 	z-index: 1
 	font-weight: 600
+	background-image: url(../img/map.jpg)
+	background-size: cover
+	background-repeat: no-repeat
+	background-position: center
+	overflow: inherit
+
+	&__absolute
+		display: none
 
 	h2
 		text-align: left

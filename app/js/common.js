@@ -1,5 +1,22 @@
 $(function() {
 
+
+//-----------------------------Привязка------------------------------
+  // var navLi = $('.nav li');
+
+  // $('.sticky').waypoint( function() {
+  //   var hash = $(this).attr('id');
+
+  //   navLi.removeClass('active');
+
+  //   $.each( navLi, function() {
+  //     if( $(this).children('a').attr('href').slice(1) == hash ){
+  //       $(this).addClass('active');
+  //     }
+  //   });
+
+  // });
+
 //------------------------------slider-----------------------------
   var swiper = new Swiper('.swiper-container', {
     slidesPerView: 4,
@@ -75,6 +92,7 @@ $(function() {
           employment: jQuery('.form-' + index).find("input[name=employment]").val(),
           children: jQuery('.form-' + index).find("input[name=children]").val(),
           changedthename: jQuery('.form-' + index).find("input[name=changedthename]").val(),
+          comment: jQuery('.form-' + index).find("textarea[name=comment]").val(),
           subject: jQuery('.form-' + index).find("input[name=subject]").val()
         };
         ajaxSend('.form-' + index, t);
@@ -101,10 +119,10 @@ $(function() {
 //----------------------------------------fixed----------------------------------
   $(window).scroll(function(){
       if($(this).scrollTop()>20){
-          $('.header').addClass('header--active');
+          $('.header__nav').addClass('header__nav--active');
       }
       else if ($(this).scrollTop()<20){
-          $('.header').removeClass('header--active');
+          $('.header__nav').removeClass('header__nav--active');
       }
   });
 
@@ -113,7 +131,7 @@ $(function() {
       event.preventDefault();
       var id  = $(this).attr('href'),
           top = $(id).offset().top;
-      $('body,html').animate({scrollTop: top - 5}, 'slow', 'swing');
+      $('body,html').animate({scrollTop: top - 50}, 'slow', 'swing');
     //--------------------закриття меню при кліку на ссилку якоря--------------------
      $('.hamburger').removeClass('hamburger--active');
      $('.nav').removeClass('nav--active');
@@ -127,3 +145,18 @@ $(function() {
   //   $('.preloader').delay(1000).fadeOut('slow');
   // });
 
+
+// $(window).on("load",function(){
+//    $("a[href*='#']").mPageScroll2id();
+// });
+
+$(".nav a").mPageScroll2id({
+        // offset: ".nav",
+        scrollSpeed: 900,
+        scrollEasing: "easeInOutExpo",
+        scrollingEasing: "easeInOutCirc", // Устанавливает easing, который будет проигрываться если вызвать её уже во время изинга(кликнуть по ссылке во время прокрутки)
+        // clickedClass: "active-item", // Устанавливает класс для ссылки, при клике на неё
+        targetClass: "color-block", // Устанавливает класс для блока, при его появлении во время скролла
+        highlightClass: "active-item",  // Устанавливает класс для ссылки, при скролле до привязанного к нему блоку
+        keepHighlightUntilNext: true  // Один эллемент всегда будет выделен
+      });

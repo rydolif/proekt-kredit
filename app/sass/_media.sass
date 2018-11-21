@@ -54,18 +54,31 @@
 
 
 @media only screen and (max-width : 992px)
+	.decor
+		display: none
+		
 	.header
 		padding-bottom: 40px
+
+		&__nav
+			padding: 0
 
 		&__text
 			font-size: 12px
 
 		&--section
-			&__decor
-				display: none
+			flex-direction: column
+
 
 			&__content
 				width: 100%
+
+			&__info
+				margin-bottom: 60px
+
+			&__decor
+				margin: 0 auto
+
 
 	h1
 		br
@@ -168,6 +181,28 @@
 
 
 @media only screen and (max-width : 768px)
+	.map
+		background-position: center left
+		margin-bottom: 250px
+
+		.container
+			top: 250px
+
+
+
+	.header__top
+		padding-right: 70px
+
+		div
+			flex-direction: column
+
+			a:first-child
+				margin-right: 0
+	
+	.issue
+		img
+			display: none
+
 	.btn
 		height: 40px
 		line-height: 40px
@@ -256,19 +291,40 @@
 	.advantages__item
 		width: 100%
 
-	.header--section
-		&__list
-			font-size: 16px
+	.header
+		overflow: hidden
 
-		&__info
-			flex-direction: column
+		&__tel
+			font-size: 14px
 
-			&_item
-				width: 100%
-				margin-bottom: 20px
+			img
+				display: none
 
-				br
-					display: none
+
+		&--section
+
+			&__list
+				font-size: 16px
+
+			&__info
+				flex-direction: column
+
+				&_item
+					width: 100%
+					margin-bottom: 20px
+
+					br
+						display: none
+
+			&__decor
+				width: 320px
+				height: 330px
+
+				&_img1,
+				&_img2,
+				&_img3
+					width: 150px
+					height: 220px
 
 
 	.btn
